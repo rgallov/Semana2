@@ -460,18 +460,18 @@
     </div>
 
     <template>
-        <div id="jsonapp">
+        <div >
           <ul>
             <li v-for="person in persons" :key="person.codigo">
                {{person.Nombre}}
              </li>
           </ul>
         </div>
-      </template>
+    </template>
 
 </section>
 <script>
-    import usersData from "./files/team.json";
+ import usersData from "./team.json";
  
  export default {
    data() {

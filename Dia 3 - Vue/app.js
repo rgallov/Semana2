@@ -123,4 +123,6 @@ var component1 = new Vue({
     } 
 });
 
-
+var jsonFile = new Vue({ 
+    el: 'jsonapp' 
+});
