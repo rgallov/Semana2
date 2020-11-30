@@ -1,6 +1,6 @@
 var vm = new Vue({
  el:'#app',
- template: '<div v-bind:style="estilos" v-on:click="log()"></div>chec',
+ template: '<div v-bind:style="estilos" v-on:click="log()"></div>',
  data: {
      titulo: 'Rectángulo',
      largo:100,
@@ -93,24 +93,24 @@ Vue.component(
         } 
     }, 
     template: '<button v-on:click="count++">Me ha pulsado {{ count }} veces.</button>' 
-})
+});
 
 var component = new Vue({ 
     el: '#components-demo' 
-})
+});
 
 var component = new Vue({ 
     el: '#components-demo1' 
-})
+});
 
 Vue.component('blog-post', 
     { props: ['title'], 
     template: '<h3>{{ title }}</h3>'
-})
+});
 
 var component = new Vue({ 
     el: '#component-blog' 
-})
+});
 
 var component1 = new Vue({ 
     el: '#blog-post-demo', 
@@ -121,4 +121,4 @@ var component1 = new Vue({
             { id: 3, title: 'Por qué Vue es tan divertido?' } 
         ] 
     } 
-})
+});
