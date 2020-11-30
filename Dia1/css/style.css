@@ -1,0 +1,309 @@
+body{
+    margin-top: 0px;
+    font-family: Arial, Helvetica, sans-serif;    
+}
+
+.container{
+    width: 1200px;
+    background-color: #ffffff;
+    -ms-flex-item-align: center;
+        align-self: center;
+    margin: 0px auto;
+    padding: 0 auto;
+}
+
+.header{
+    padding-top: 5px;
+    padding-bottom: 0px;
+    background-color: #fff;
+    height: auto;    
+}
+
+.container-menu{
+    height: 50px;
+    background-color: #1E1F29;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+
+}
+.container-logo{
+    width: 100%;
+    height: inherit;
+    background-color: #1E1F29;
+    text-align: center;
+}
+
+.site-title{
+    margin: 0;
+    padding: 0.36em 0;
+    color: #ffffff;
+}
+
+.container-imagen{
+    /* background-image: url('../images/bg.png'); */
+    background-image: url('../images/banner.jpg');
+    height: 240px;
+    
+    /* margin-bottom: 20px; */
+}
+
+.nav-list{
+    padding: 0.25em 0;
+    list-style-type: none;
+    text-align: end;
+    width: 100%;
+}
+
+.nav-element{
+    padding: 1em 15px;
+    display: inline-block;
+    text-decoration: none;
+    color: #3e3e3e;
+
+}
+
+.nav-element:hover{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.image-text{
+    margin: 0;
+    padding: 9% 0;
+    text-align: center;
+}
+
+.section-1{
+    /* height: 500px; */
+    background-color: #ffffff;
+    margin-bottom: 5px;
+
+}
+
+.section-2{
+    /* height: 500px; */
+    background-color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.section-3{
+    /* height: 500px; */
+    background-color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.footer-container{
+    background-color: #1E1F29;
+    width: 100%;
+    display: flex;    
+}
+
+.footer-container__div_izq{
+    width: 50%;
+    display: inline-block;
+    text-align: left;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+.footer-container__div_der{
+    width: 50%;
+    display: inline-block;
+}
+
+.footer__span{
+    color: #fff;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.footer-ul{
+    list-style: none;
+    justify-content: space-evenly;
+    color: #fff;  
+    display: flex;  
+}
+
+.footer-ul__link{
+    text-decoration: none;
+    color: #fff;   
+}
+
+.section-text{
+    margin: 0;
+    color: #fff;
+    background: #1E1F29;
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+}
+
+.col-3{
+    width: 32.83%;
+    height: 485px;
+    background-color: transparent;
+    display: inline-block;
+    padding: -15px;
+    margin-top: 5px;
+    text-align: center;
+    border: solid;
+    vertical-align: top;
+}
+.col-5{
+    width: 18.78%;
+    height: 485px;
+    display: inline-block;
+    margin: 5px 4px 0;
+    text-align: center;
+    background-color: #fff;
+    border: solid;
+    vertical-align: top;
+}
+
+.service-content{
+    padding-top: 5px;
+}
+.service-text{
+    padding: 5px;
+    text-align: justify;
+    bottom: 0;
+}
+
+.service-image{
+    margin-right: 5px;
+    padding: 5px 5px;
+    color: #fd0101;    
+    width: 200px;
+    height: 200px;
+}
+
+.service-url{
+    font-size: 10px;
+    float: right;
+    padding-right: 5px;
+}
+
+.service-url > a{
+    color: #0418fd; 
+}
+
+.team-image__img{
+    width: 150px;
+    height: 150px;
+}
+
+.service-text.memebers{
+    font-style: italic; 
+}
+
+.section-news > div:first-child{
+    margin-bottom: 2px; 
+}
+
+.news{
+    width: 100%;
+    background-color: #ffffff;
+    /* height: 240px; */
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+
+.news > div:first-child{
+    margin: 0 6px;
+}
+
+.news-data{
+    width: 50%;
+    /* height: 100%; */
+    background-color: ##ffffff;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex; 
+}
+
+.news-image{
+    margin: 0 5px;
+    padding: 16px 5px;
+    color: #6495ed;
+}
+
+.news-text{
+    color: #1E1F29;
+    text-align: justify;
+    width: 90%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.news-text > span.news-url{
+    text-align: right;
+}
+
+.team-content{
+    padding: 0.5em 0;
+}
+.team-text{
+    padding: 10px;
+    text-align: justify;
+    bottom: 0;
+}
+
+.team-image{
+    margin: 0 5px;
+    padding: 16px 5px;
+    color: #fd0101;    
+}
+
+.team-image__img{
+    width: 150px;
+    height: 150px;
+}
+
+.team-text.memebers{
+    font-style: italic; 
+}
+
+.fa-ambulance.news-logo{
+    padding: 0.25em 0;
+}
+
+
+.news-url{
+    font-size: 10px;
+    float: right;
+}
+
+.news-url > a{
+    color: #0418fd; 
+}
+
+hr{
+    color: white;
+}
+
+.main-menu{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.main-menu__item{
+    line-height: 3;
+}
+
+.main-menu__link{
+    text-decoration: none;
+    font-size: 1em;
+    color: #ffffff;
+}
+
+.main-menu__link:hover{
+    text-decoration: underline;
+    font-weight: bold;
+}
