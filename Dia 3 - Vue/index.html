@@ -459,7 +459,28 @@
         <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:title="post.title" ></blog-post>
     </div>
 
+    <template>
+        <div id="jsonapp">
+          <ul>
+            <li v-for="person in persons" :key="person.codigo">
+               {{person.Nombre}}
+             </li>
+          </ul>
+        </div>
+      </template>
+
 </section>
+<script>
+    import usersData from "./files/team.json";
+ 
+ export default {
+   data() {
+     return {
+       persons: usersData,
+     };
+   },
+ };
+</script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -467,7 +488,7 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
     <script src="node_modules/vue/dist/vue.js"></script>
-    <script src="app.js"></script>
+    <script src="app.js"></script>    
 </body>
 
 </html>
