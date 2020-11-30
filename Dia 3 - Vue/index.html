@@ -406,81 +406,85 @@
 
     </div>
     </section>
-    <section >
-    <div id="app"></div>
-    <div id="classes" class="static" v-bind:class="{active:isActive, 'text-danger': hasError}"></div>
-    <div id="app1">
-        <p>{{message}}</p>
-        <input v-model="message">
-    </div>
-    <hr>
-    <div id="app2">
-    <h3 v-if="!message1">Escribe tu sugerencia</h3>
-    <h3 v-if="message1">Presiona ENTER para enviar</h3>
-    <textarea v-model="message1" class="form-control"></textarea>
-</div>
-    <hr>
-    <div id="app3">
-    <h3 v-if="!message2">Escribe tu sugerencia</h3>
-    <h3 v-else>Presiona ENTER para enviar</h3>
-    <textarea v-model="message2" class="form-control"></textarea>
-</div>
-    <hr>
-    <ul id="example-1">
-        <li v-for="item in items"> {{ item.mensaje }} </li>
-    </ul>
-    <hr>
-    <ul id="v-for-object" class="demo">
-        <li v-for="value in object"> {{ value }} </li>
-    </ul>
-    <hr>
-    <div id="example-3">
-        <button v-on:click="counter += 1">Add 1</button>
-        <p>Se ha hecho clic en el botón de arriba {{ counter }} veces.</p>
-    </div>
-    <hr>
-    <div id="components-demo"> 
-        <button-counter></button-counter> 
-    </div>
-    <hr>
-    <div id="components-demo1"> 
-        <button-counter></button-counter> 
-        <button-counter></button-counter> 
-        <button-counter></button-counter>
-    </div>
-    <hr>
-    <div id="component-blog">
-        <blog-post title="Mi viaje con Vue"></blog-post>
-        <blog-post title="Blogging con Vue"></blog-post>
-        <blog-post title="Por qué Vue es tan divertido?"></blog-post>
-    </div>
-    <hr>
-    <div id ="blog-post-demo">
-        <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:title="post.title" ></blog-post>
-    </div>
+    <section>
+        <div id="app"></div>
+        <div id="classes" class="static" v-bind:class="{active:isActive, 'text-danger': hasError}"></div>
+        <div id="app1">
+            <p>{{message}}</p>
+            <input v-model="message">
+        </div>
+        <hr>
+        <div id="app2">
+            <h3 v-if="!message1">Escribe tu sugerencia</h3>
+            <h3 v-if="message1">Presiona ENTER para enviar</h3>
+            <textarea v-model="message1" class="form-control"></textarea>
+        </div>
+        <hr>
+        <div id="app3">
+            <h3 v-if="!message2">Escribe tu sugerencia</h3>
+            <h3 v-else>Presiona ENTER para enviar</h3>
+            <textarea v-model="message2" class="form-control"></textarea>
+        </div>
+        <hr>
+        <ul id="example-1">
+            <li v-for="item in items"> {{ item.mensaje }} </li>
+        </ul>
+        <hr>
+        <ul id="v-for-object" class="demo">
+            <li v-for="value in object"> {{ value }} </li>
+        </ul>
+        <hr>
+        <div id="example-3">
+            <button v-on:click="counter += 1">Add 1</button>
+            <p>Se ha hecho clic en el botón de arriba {{ counter }} veces.</p>
+        </div>
+        <hr>
+        <div id="components-demo">
+            <button-counter></button-counter>
+        </div>
+        <hr>
+        <div id="components-demo1">
+            <button-counter></button-counter>
+            <button-counter></button-counter>
+            <button-counter></button-counter>
+        </div>
+        <hr>
+        <div id="component-blog">
+            <blog-post title="Mi viaje con Vue"></blog-post>
+            <blog-post title="Blogging con Vue"></blog-post>
+            <blog-post title="Por qué Vue es tan divertido?"></blog-post>
+        </div>
+        <hr>
+        <div id="blog-post-demo">
+            <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:title="post.title"></blog-post>
+        </div>
 
+
+
+    </section>
     <template>
-        <div >
-          <ul>
-            <li v-for="person in persons" :key="person.codigo">
-               {{person.Nombre}}
-             </li>
-          </ul>
+        <div>
+            <ul>
+                <li v-for="person in persons" :key="person.codigo">
+                    {{person.Nombre}}
+                </li>
+            </ul>
         </div>
     </template>
+    <script>
+        import usersData from "team.json";
 
-</section>
-<script>
- import usersData from "./team.json";
- 
- export default {
-   data() {
-     return {
-       persons: usersData,
-     };
-   },
- };
-</script>
+        export default {
+            name: "Team",
+            computed: {
+                data() {
+                    return {
+                        persons: usersData,
+                    };
+                }
+            }
+        };
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -488,7 +492,7 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
     <script src="node_modules/vue/dist/vue.js"></script>
-    <script src="app.js"></script>    
+    <script src="app.js"></script>
 </body>
 
 </html>
