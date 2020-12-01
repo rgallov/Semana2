@@ -462,29 +462,54 @@
 
 
     </section>
-    <template>
-        <div>
-            <ul>
-                <li v-for="person in persons" :key="person.codigo">
-                    {{person.Nombre}}
-                </li>
-            </ul>
+    <div id="jsonFile">
+        <div class="container-fluid">
+            <div class="row justify-content-center mb-5">
+                <div class="col mt-5" v-for="person in persons" :key="person.codigo">
+                    <div v-if="person.codigo % 2 === 0" class="card text-white bg-dark">
+                        <div class="d-flex justify-content-center p-2"> <img class="team-image__img"
+                                :src="person.Imagen"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{person.Nombre}}</h5>
+                            <p class="card-text">{{person.Descripcion}}</p>
+                        </div>
+                        <div class="card-footer bg-white"> <small class="text-muted">Last updated 3 mins
+                                ago</small>
+                        </div>
+                    </div>
+                    <div v-else class="card text-white bg-danger">
+                        <div class="d-flex justify-content-center p-2"> <img class="team-image__img"
+                                :src="person.Imagen"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{person.Nombre}}</h5>
+                            <p class="card-text">{{person.Descripcion}}</p>
+                        </div>
+                        <div class="card-footer bg-white"> <small class="text-muted">Last updated 3 mins
+                                ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </template>
+    </div>
+    <!-- 
+
     <script>
         import usersData from "team.json";
 
-        export default {
-            name: "Team",
-            computed: {
-                data() {
-                    return {
-                        persons: usersData,
-                    };
-                }
-            }
-        };
+export default {
+    name: "Team",
+    computed: {
+        persons() {
+            return usersData.team.map((item) => {
+                return item;
+            })                    
+        }
+    }
+}; 
     </script>
+-->
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -493,6 +518,7 @@
         crossorigin="anonymous"></script>
     <script src="node_modules/vue/dist/vue.js"></script>
     <script src="app.js"></script>
+
 </body>
 
 </html>
