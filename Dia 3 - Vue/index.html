@@ -406,60 +406,110 @@
 
     </div>
     </section>
-    <section >
-    <div id="app"></div>
-    <div id="classes" class="static" v-bind:class="{active:isActive, 'text-danger': hasError}"></div>
-    <div id="app1">
-        <p>{{message}}</p>
-        <input v-model="message">
-    </div>
-    <hr>
-    <div id="app2">
-    <h3 v-if="!message1">Escribe tu sugerencia</h3>
-    <h3 v-if="message1">Presiona ENTER para enviar</h3>
-    <textarea v-model="message1" class="form-control"></textarea>
-</div>
-    <hr>
-    <div id="app3">
-    <h3 v-if="!message2">Escribe tu sugerencia</h3>
-    <h3 v-else>Presiona ENTER para enviar</h3>
-    <textarea v-model="message2" class="form-control"></textarea>
-</div>
-    <hr>
-    <ul id="example-1">
-        <li v-for="item in items"> {{ item.mensaje }} </li>
-    </ul>
-    <hr>
-    <ul id="v-for-object" class="demo">
-        <li v-for="value in object"> {{ value }} </li>
-    </ul>
-    <hr>
-    <div id="example-3">
-        <button v-on:click="counter += 1">Add 1</button>
-        <p>Se ha hecho clic en el botón de arriba {{ counter }} veces.</p>
-    </div>
-    <hr>
-    <div id="components-demo"> 
-        <button-counter></button-counter> 
-    </div>
-    <hr>
-    <div id="components-demo1"> 
-        <button-counter></button-counter> 
-        <button-counter></button-counter> 
-        <button-counter></button-counter>
-    </div>
-    <hr>
-    <div id="component-blog">
-        <blog-post title="Mi viaje con Vue"></blog-post>
-        <blog-post title="Blogging con Vue"></blog-post>
-        <blog-post title="Por qué Vue es tan divertido?"></blog-post>
-    </div>
-    <hr>
-    <div id ="blog-post-demo">
-        <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:title="post.title" ></blog-post>
-    </div>
+    <section>
+        <div id="app"></div>
+        <div id="classes" class="static" v-bind:class="{active:isActive, 'text-danger': hasError}"></div>
+        <div id="app1">
+            <p>{{message}}</p>
+            <input v-model="message">
+        </div>
+        <hr>
+        <div id="app2">
+            <h3 v-if="!message1">Escribe tu sugerencia</h3>
+            <h3 v-if="message1">Presiona ENTER para enviar</h3>
+            <textarea v-model="message1" class="form-control"></textarea>
+        </div>
+        <hr>
+        <div id="app3">
+            <h3 v-if="!message2">Escribe tu sugerencia</h3>
+            <h3 v-else>Presiona ENTER para enviar</h3>
+            <textarea v-model="message2" class="form-control"></textarea>
+        </div>
+        <hr>
+        <ul id="example-1">
+            <li v-for="item in items"> {{ item.mensaje }} </li>
+        </ul>
+        <hr>
+        <ul id="v-for-object" class="demo">
+            <li v-for="value in object"> {{ value }} </li>
+        </ul>
+        <hr>
+        <div id="example-3">
+            <button v-on:click="counter += 1">Add 1</button>
+            <p>Se ha hecho clic en el botón de arriba {{ counter }} veces.</p>
+        </div>
+        <hr>
+        <div id="components-demo">
+            <button-counter></button-counter>
+        </div>
+        <hr>
+        <div id="components-demo1">
+            <button-counter></button-counter>
+            <button-counter></button-counter>
+            <button-counter></button-counter>
+        </div>
+        <hr>
+        <div id="component-blog">
+            <blog-post title="Mi viaje con Vue"></blog-post>
+            <blog-post title="Blogging con Vue"></blog-post>
+            <blog-post title="Por qué Vue es tan divertido?"></blog-post>
+        </div>
+        <hr>
+        <div id="blog-post-demo">
+            <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:title="post.title"></blog-post>
+        </div>
 
-</section>
+
+
+    </section>
+    <div id="jsonFile">
+        <div class="container-fluid">
+            <div class="row justify-content-center mb-5">
+                <div class="col mt-5" v-for="person in persons" :key="person.codigo">
+                    <div v-if="person.codigo % 2 === 0" class="card text-white bg-dark">
+                        <div class="d-flex justify-content-center p-2"> <img class="team-image__img"
+                                :src="person.Imagen"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{person.Nombre}}</h5>
+                            <p class="card-text">{{person.Descripcion}}</p>
+                        </div>
+                        <div class="card-footer bg-white"> <small class="text-muted">Last updated 3 mins
+                                ago</small>
+                        </div>
+                    </div>
+                    <div v-else class="card text-white bg-danger">
+                        <div class="d-flex justify-content-center p-2"> <img class="team-image__img"
+                                :src="person.Imagen"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{person.Nombre}}</h5>
+                            <p class="card-text">{{person.Descripcion}}</p>
+                        </div>
+                        <div class="card-footer bg-white"> <small class="text-muted">Last updated 3 mins
+                                ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 
+
+    <script>
+        import usersData from "team.json";
+
+export default {
+    name: "Team",
+    computed: {
+        persons() {
+            return usersData.team.map((item) => {
+                return item;
+            })                    
+        }
+    }
+}; 
+    </script>
+-->
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -468,6 +518,7 @@
         crossorigin="anonymous"></script>
     <script src="node_modules/vue/dist/vue.js"></script>
     <script src="app.js"></script>
+
 </body>
 
 </html>
