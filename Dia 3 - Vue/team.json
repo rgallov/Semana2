@@ -4,25 +4,36 @@
             "codigo": "1",
             "Nombre": "Lucas Mera",
             "Descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum ac elit et accumsan.",
-            "Rol": "Desarrollador backend"
+            "Rol": "Desarrollador backend",
+            "Imagen": "images/mark.jpg"
         },
         {
             "codigo": "2",
             "Nombre": "Cristian Sanz",
-            "Descripcion2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum ac elit et accumsan.",
-            "Rol": "Arquitecto de software"
+            "Descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum ac elit et accumsan.",
+            "Rol": "Arquitecto de software",
+            "Imagen": "images/mark.jpg"
         },
         {
             "codigo": "3",
             "Nombre": "Samara Cerezo",
             "Descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum ac elit et accumsan.",
-            "Rol": "Tester"
+            "Rol": "Tester",
+            "Imagen": "images/mark.jpg"
         },
         {
             "codigo": "4",
             "Nombre": "Iris Mesa",
             "Descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum ac elit et accumsan.",
-            "Rol": "Analista"
+            "Rol": "Analista",
+            "Imagen": "images/mark.jpg"
+        },
+        {
+            "codigo": "5",
+            "Nombre": "Iris Mesa",
+            "Descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum ac elit et accumsan.",
+            "Rol": "Analista",
+            "Imagen": "images/mark.jpg"
         }
     ]
 }
