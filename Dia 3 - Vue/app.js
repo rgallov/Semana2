@@ -275,7 +275,7 @@ var component1 = new Vue({
 });
 
 Vue.component(
-    'complejo',
+    'equipo',
     {        
         props:{persona:Object},
         template:
@@ -347,3 +347,93 @@ Vue.component(
             this.init()
         }
     });
+
+    Vue.component(
+        'noticia',
+        {        
+            props:{noticia:Object},
+            template:
+            `         
+                <div class="col-lg-6 col-xs-12 border">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="p-3"><i class="fab fa-linux" style="font-size:150px"></i> </div>
+                                <div class="p-2">
+                                    <h5 class="news-title">Más allá de la broma, 2020 está siendo un buen año para Linux
+                                        en
+                                        el escritorio y más allá</h5>
+                                    <p> Lo de que este va a ser el año de
+                                        Linux en el escritorio se ha convertido ya en broma recurrente al hablar de este
+                                        sistema operativo, pero la verdad es que si ha habido un año excepcional para
+                                        Linux
+                                        en el escritorio, ese ha sido 2020, y la culpa, tóquense ustedes las narices, es
+                                        de
+                                        Microsoft. </p>
+                                </div>
+                            </div>
+                            <div class="d-flex container-fluid justify-content-end pb-2 mt-n2"> <button type="button"
+                                    class="btn btn-outline-info"
+                                    onclick="window.open(location.href='https://www.linux.org/','_blank');">Leer noticia
+                                    completa >></button>
+                            </div>
+                        </div>
+                        `
+                    });
+
+                    var component = new Vue({
+                        el: '#equipo-div'
+                    });
+                   
+                    Vue.component(
+                        'servicio',
+                        {        
+                            props:{servicio:Object},
+                            template:
+`
+                    <div class="col-sm-6 col-xs-12 col-lg-4">
+                            <div class="card">
+                                <div class="d-flex justify-content-center">
+                                    <img class="service-image" :src=servicio.Imagen>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title" v-html=servicio.Titulo></h5>
+                                    <p class="card-text">{{servicio.Descripcion}}</p> 
+                                    <a :href=servicio.Enlace target="_blank"
+                                        class="btn btn-primary">Ver Servicio >></a>
+                                </div>
+                            </div>
+                        </div>
+                        `
+                    });
+
+                    var component = new Vue({
+                        el: '#servicio-div',
+                        data: {
+                            servicios: []
+                        },
+                        methods: {
+                            loadJSON(callback) {
+                    
+                                var xobj = new XMLHttpRequest();
+                                xobj.overrideMimeType("application/json");
+                                xobj.open('GET', './files/servicios.json', true)
+                                xobj.onreadystatechange = function () {
+                                    if (xobj.readyState == 4 && xobj.status == "200") {
+                                        // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+                                        callback(xobj.responseText);
+                                    }
+                                };
+                                xobj.send(null);
+                            },
+                            init() {
+                                let that = this
+                                that.loadJSON(function (response) {
+                                    // Parse JSON string into object
+                                    var data = JSON.parse(response);
+                                    that.servicios = data.servicios
+                                });
+                            }
+                        },
+                        mounted() {
+                            this.init()
+                        }
+                    });
