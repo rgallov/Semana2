@@ -286,7 +286,7 @@ Vue.component(
                         :src="persona.Imagen"></div>
                 <div class="card-body">
                     <h5 class="card-title">{{persona.Nombre}}</h5>
-                    <p class="card-text">{{persona.Descripcion}}</p>
+                    <p class="card-text" v-html=persona.Descripcion></p>
                 </div>
                 <div class="card-footer bg-white"> <small class="text-muted">Last updated 3 mins
                         ago</small>
@@ -297,7 +297,7 @@ Vue.component(
                         :src="persona.Imagen"></div>
                 <div class="card-body">
                     <h5 class="card-title">{{persona.Nombre}}</h5>
-                    <p class="card-text">{{persona.Descripcion}}</p>
+                    <p class="card-text" v-html=persona.Descripcion></p>
                 </div>
                 <div class="card-footer bg-white"> <small class="text-muted">Last updated 3 mins
                         ago</small>
