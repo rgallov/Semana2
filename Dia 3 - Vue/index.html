@@ -85,63 +85,8 @@
                     <p class="section-text">Servicios</p>
                 </div>
                 <div class="container-fluid">
-                    <div class="row justify-content-center">
-                        <div class="col-sm-6 col-xs-12 col-lg-4">
-                            <div class="card">
-                                <div class="d-flex justify-content-center">
-                                    <img class="service-image" src="images/html5.png">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title"><i class="fab fa-html5"></i> HTML 5</h5>
-                                    <p class="card-text">Última versión de HTML. Se trata de una nueva versión de HTML,
-                                        con nuevos elementos,
-                                        atributos y comportamientos.
-                                        Contiene un conjunto más amplio de tecnologías que permite a los sitios Web y a
-                                        las
-                                        aplicaciones ser más diversas y de gran alcance</p> <a
-                                        href="https://www.w3.org/standards/webdesign/htmlcss.html" target="_blank"
-                                        class="btn btn-primary">Ver Servicio >></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-xs-12 col-lg-4">
-                            <div class="card">
-                                <div class="d-flex justify-content-center"> <img class="service-image"
-                                        src="images/nodejs.png"></div>
-                                <div class="card-body">
-                                    <h5 class="card-title"><i class="fab fa-node"></i>Node JS</h5>
-                                    <p class="card-text">Es un entorno en tiempo de ejecución multiplataforma, de código
-                                        abierto, para la capa
-                                        del
-                                        servidor (pero no limitándose a ello) basado en el lenguaje de programación
-                                        JavaScript,
-                                        con
-                                        E/S de datos en una arquitectura orientada a eventos.</p> <a
-                                        href="https://nodejs.org/es/" target="_blank" class="btn btn-primary">Ver
-                                        Servicio
-                                        >></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-xs-12 col-lg-4">
-                            <div class="card">
-                                <div class="d-flex justify-content-center">
-                                    <img class="service-image" src="images/python.png"> </div>
-                                <div class="card-body">
-                                    <h5 class="card-title"><i class="fab fa-python"></i> Python</h5>
-                                    <p class="card-text">Es un lenguaje de programación interpretado cuya filosofía hace
-                                        hincapié en la
-                                        legibilidad
-                                        de su código
-                                        Se trata de un lenguaje de programación multiparadigma, ya que soporta
-                                        orientación a
-                                        objetos, programación imperativa y, en menor medida, programación funcional.</p>
-                                    <a href="https://www.python.org/" target="_blank" class="btn btn-primary">Ver
-                                        Servicio
-                                        >></a>
-                                </div>
-                            </div>
-                        </div>
+                    <div id="servicio-div" class="row justify-content-center">
+                        <servicio v-for="serv in servicios" :servicio="serv"></servicio>                        
                     </div>
                 </div>
             </section>
@@ -150,86 +95,12 @@
                     <p class="section-text">Noticias</p>
                 </div>
                 <div class="container-fluid">
-                    <div class="row mt-md-5 mt-sm-5 mt-xs-5">
-                        <div class="col-lg-6 col-xs-12 border">
-                            <div class="d-flex justify-content-center align-items-center">
-                                <div class="p-3"> <i class="fab fa-css3-alt" style="font-size:150px"></i> </div>
-                                <div class="p-2">
-                                    <h5 class="news-title">5 Razones para aprender HTML y CSS.</h5>
-                                    <p> Aprender HTML y CSS no les sirve
-                                        solo
-                                        a los diseñadores web. Veamos unas razones por las que quizá quieras aprenderlos
-                                        también. </p>
-                                </div>
-                            </div>
-                            <div class="d-flex container-fluid justify-content-end pb-2 mt-n2"> <button type="button"
-                                    class="btn btn-outline-info"
-                                    onclick="window.open(location.href='https://hipertextual.com/archivo/2014/10/aprender-html-y-css/','_blank');">Leer
-                                    noticia completa >></button> </div>
-                        </div>
-                        <div class="col-lg-6 col-xs-12 border">
-                            <div class="d-flex justify-content-center align-items-center">
-                                <div class="p-3"><i class="fab fa-java" style="font-size:150px"></i> </div>
-                                <div class="p-2">
-                                    <h5 class="news-title">5 tendencias que marcarán la programación JAVA en los
-                                        próximos
-                                        años</h5>
-                                    <p> Java cumple 25 años y ya ha
-                                        llegado a
-                                        convertirse en uno de los lenguajes de programación más utilizados del mundo,
-                                        manteniendo un ritmo constante de desarrollo. De hecho, el Tiobe Index más
-                                        reciente
-                                        lo sitúa en primer lugar, por encima de otros lenguajes como C o Python </p>
-                                </div>
-                            </div>
-                            <div class="d-flex container-fluid justify-content-end pb-2 mt-n2"> <button type="button"
-                                    class="btn btn-outline-info"
-                                    onclick="window.open(location.href='https://www.ticpymes.es/tecnologia/noticias/1116708049504/5-tendencias-marcaran-programacion-java-proximos-anos.1.html','_blank');">Leer
-                                    noticia completa >></button> </div>
-                        </div>
+                    <div id="equipo-div" class="row mt-md-5 mt-sm-5 mt-xs-5">
+                        <noticia></noticia>
+                        <noticia></noticia>
                         <div class="w-100"></div>
-                        <div class="col-lg-6 col-xs-12 border">
-                            <div class="d-flex justify-content-center align-items-center">
-                                <div class="p-3"> <i class="fab fa-amazon" style="font-size:150px"></i> </div>
-                                <div class="p-2">
-                                    <h5 class="news-title">Coronavirus en América Latina: 8 oportunidades de negocios
-                                        digitales en medio de la pandemia</h5>
-                                    <p> Durante la crisis económica que
-                                        enfrenta el mundo a raíz de la covid-19, ha habido ganadores y perdedores.
-                                        La fortuna de Jeff Bezos, el fundador y CEO de Amazon, se ha disparado en medio
-                                        de
-                                        los confinamientos. En un solo día (el 20 de julio), su patrimonio aumentó en
-                                        US$13.000 millones por el éxito de las acciones de su compañía en la bolsa de
-                                        valores. </p>
-                                </div>
-                            </div>
-                            <div class="d-flex container-fluid justify-content-end pb-2 mt-n2"> <button type="button"
-                                    class="btn btn-outline-info"
-                                    onclick="window.open(location.href='https://www.bbc.com/mundo/noticias-53478617','_blank');">Leer
-                                    noticia completa >></button> </div>
-                        </div>
-                        <div class="col-lg-6 col-xs-12 border">
-                            <div class="d-flex justify-content-center align-items-center">
-                                <div class="p-3"><i class="fab fa-linux" style="font-size:150px"></i> </div>
-                                <div class="p-2">
-                                    <h5 class="news-title">Más allá de la broma, 2020 está siendo un buen año para Linux
-                                        en
-                                        el escritorio y más allá</h5>
-                                    <p> Lo de que este va a ser el año de
-                                        Linux en el escritorio se ha convertido ya en broma recurrente al hablar de este
-                                        sistema operativo, pero la verdad es que si ha habido un año excepcional para
-                                        Linux
-                                        en el escritorio, ese ha sido 2020, y la culpa, tóquense ustedes las narices, es
-                                        de
-                                        Microsoft. </p>
-                                </div>
-                            </div>
-                            <div class="d-flex container-fluid justify-content-end pb-2 mt-n2"> <button type="button"
-                                    class="btn btn-outline-info"
-                                    onclick="window.open(location.href='https://www.linux.org/','_blank');">Leer noticia
-                                    completa >></button>
-                            </div>
-                        </div>
+                        <noticia></noticia>
+                        <noticia></noticia>
                     </div>
                 </div>
             </section>
@@ -237,89 +108,10 @@
                 <div class="section-3">
                     <p class="section-text">Equipo</p>
                 </div>
-                <div class="container-fluid">
-                    <div class="row justify-content-center mb-5">
-                        <div class="col mt-5">
-                            <div class="card text-white bg-dark">
-                                <div class="d-flex justify-content-center p-2"> <img class="team-image__img"
-                                        src="images/jeff.jpg"></div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Harvy Santiago Rosero Trejo</h5>
-                                    <p class="card-text">Nacionalidad: Colombiano</br>
-                                        Edad: 20 años</br>
-                                        Hobbie: Dibujar</br>
-                                        Hobbie: Volleyball</br>
-                                        Lenguajes: C++</br>
-                                        Lenguajes: Java</br>
-                                        Lenguajes: SQL</br>
-                                    </p>
-                                </div>
-                                <div class="card-footer"> <small class="text-muted">Last updated 3 mins ago</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col mt-5">
-                            <div class="card text-white bg-danger">
-                                <div class="d-flex justify-content-center p-2"> <img class="team-image__img"
-                                        src="images/bill.jpg"> </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Juan Sebastián Franco Cervera</h5>
-                                    <p class="card-text">Nacionalidad: Colombiano</br>
-                                        Edad: 23 años</br>
-                                        Hobbie: Guitarra</br>
-                                        Hobbie: Fútbol</br>
-                                        Profesión: Ingeniero Civil</br>
-                                    </p>
-                                </div>
-                                <div class="card-footer bg-white"> <small class="text-muted">Last updated 3 mins
-                                        ago</small> </div>
-                            </div>
-                        </div>
-                        <div class="col mt-5">
-                            <div class="card border-info text-info">
-                                <div class="d-flex justify-content-center p-2"> <img class="team-image__img"
-                                        src="images/Larry.jpg"></div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Rodrigo Gallo Vega</h5>
-                                    <p class="card-text">Nacionalidad: Colombiano</br>
-                                        Edad: 43 años</br>
-                                        Hobbie: Correr</br>
-                                        Hobbie: Ciclismo</br>
-                                        Lenguajes: Python</br>
-                                        Lenguajes: Java</br>
-                                        Lenguajes: SQL</br>
-                                        Lenguajes: Javascript</br>
-                                    </p>
-                                </div>
-                                <div class="card-footer"> <small class="text-muted">Last updated 3 mins ago</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col mt-5">
-                            <div class="card text-white bg-danger">
-                                <div class="d-flex justify-content-center p-2"> <img class="team-image__img"
-                                        src="images/mark.jpg"></div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Team member 4</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the bulk of the card's content.</p>
-                                </div>
-                                <div class="card-footer bg-white"> <small class="text-muted">Last updated 3 mins
-                                        ago</small> </div>
-                            </div>
-                        </div>
-                        <div class="col mt-5">
-                            <div class="card text-white bg-dark">
-                                <div class="d-flex justify-content-center p-2"> <img class="team-image__img"
-                                        src="images/elon.jpg"> </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Team member 5</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the bulk of the card's content.</p>
-                                </div>
-                                <div class="card-footer"> <small class="text-muted">Last updated 3 mins ago</small>
-                                </div>
-                            </div>
+                <div id="jsonFile3">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center mb-5">
+                            <equipo v-for="pers in persons3" :persona="pers"></equipo>
                         </div>
                     </div>
                 </div>
@@ -405,118 +197,7 @@
         </footer>
 
     </div>
-    </section>
-    <section>
-        <div id="app"></div>
-        <div id="classes" class="static" v-bind:class="{active:isActive, 'text-danger': hasError}"></div>
-        <div id="app1">
-            <p>{{message}}</p>
-            <input v-model="message">
-        </div>
-        <hr>
-        <div id="app2">
-            <h3 v-if="!message1">Escribe tu sugerencia</h3>
-            <h3 v-if="message1">Presiona ENTER para enviar</h3>
-            <textarea v-model="message1" class="form-control"></textarea>
-        </div>
-        <hr>
-        <div id="app3">
-            <h3 v-if="!message2">Escribe tu sugerencia</h3>
-            <h3 v-else>Presiona ENTER para enviar</h3>
-            <textarea v-model="message2" class="form-control"></textarea>
-        </div>
-        <hr>
-        <ul id="example-1">
-            <li v-for="item in items"> {{ item.mensaje }} </li>
-        </ul>
-        <hr>
-        <ul id="v-for-object" class="demo">
-            <li v-for="value in object"> {{ value }} </li>
-        </ul>
-        <hr>
-        <div id="example-3">
-            <button v-on:click="counter += 1">Add 1</button>
-            <p>Se ha hecho clic en el botón de arriba {{ counter }} veces.</p>
-        </div>
-        <hr>
-        <div id="components-demo">
-            <button-counter></button-counter>
-        </div>
-        <hr>
-        <div id="components-demo1">
-            <button-counter></button-counter>
-            <button-counter></button-counter>
-            <button-counter></button-counter>
-        </div>
-        <hr>
-        <div id="component-blog">
-            <blog-post title="Mi viaje con Vue"></blog-post>
-            <blog-post title="Blogging con Vue"></blog-post>
-            <blog-post title="Por qué Vue es tan divertido?"></blog-post>
-        </div>
-        <hr>
-        <div id="blog-post-demo">
-            <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:title="post.title"></blog-post>
-        </div>
-    </section>
-    <div id="jsonFile">
-        <div class="container-fluid">
-            <div class="row justify-content-center mb-5">
-                <div class="col mt-5" v-for="person in persons" :key="person.codigo">
-                    <div v-if="person.codigo % 2 === 0" class="card text-white bg-dark">
-                        <div class="d-flex justify-content-center p-2"> <img class="team-image__img"
-                                :src="person.Imagen"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">{{person.Nombre}}</h5>
-                            <p class="card-text">{{person.Descripcion}}</p>
-                        </div>
-                        <div class="card-footer bg-white"> <small class="text-muted">Last updated 3 mins
-                                ago</small>
-                        </div>
-                    </div>
-                    <div v-else class="card text-white bg-danger">
-                        <div class="d-flex justify-content-center p-2"> <img class="team-image__img"
-                                :src="person.Imagen"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">{{person.Nombre}}</h5>
-                            <p class="card-text">{{person.Descripcion}}</p>
-                        </div>
-                        <div class="card-footer bg-white"> <small class="text-muted">Last updated 3 mins
-                                ago</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="jsonFile1"></div>
-    <div id="jsonFile3">
-        <div class="container-fluid">
-            <div class="row justify-content-center mb-5">
-                <complejo v-for="pers in persons3" :persona="pers"></complejo>
-                <blog-post title="Mi viaje con Vue"></blog-post>
-            </div>
-        </div>
-    </div>
-    <!-- 
-
-    <script>
-        import usersData from "team.json";
-
-export default {
-    name: "Team",
-    computed: {
-        persons() {
-            return usersData.team.map((item) => {
-                return item;
-            })                    
-        }
-    }
-}; 
-    </script>
--->
-
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
