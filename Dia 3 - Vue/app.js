@@ -274,12 +274,6 @@ var component1 = new Vue({
     }
 });
 
-/* Vue.component('blog-post',
-    {
-        props: ['title'],
-        template: '<h3>{{ title }}</h3>'
-    });
- */
 Vue.component(
     'complejo',
     {        
@@ -331,7 +325,7 @@ Vue.component(
     
                 var xobj = new XMLHttpRequest();
                 xobj.overrideMimeType("application/json");
-                xobj.open('GET', './team.json', true)
+                xobj.open('GET', './files/team.json', true)
                 xobj.onreadystatechange = function () {
                     if (xobj.readyState == 4 && xobj.status == "200") {
                         // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
