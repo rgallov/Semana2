@@ -239,7 +239,7 @@ var component1 = new Vue({
         }
     },
     template:
-    `
+        `
     <div class="container-fluid">
             <div class="row justify-content-center mb-5">
                 <div class="col mt-5" v-for="person in persons" :key="person.codigo">
@@ -276,10 +276,10 @@ var component1 = new Vue({
 
 Vue.component(
     'equipo',
-    {        
-        props:{persona:Object},
+    {
+        props: { persona: Object },
         template:
-        `               
+            `               
         <div class="col mt-5">
             <div v-if="persona.codigo % 2 === 0" class="card text-white bg-dark">
                 <div class="d-flex justify-content-center p-2"> <img class="team-image__img"
@@ -307,88 +307,119 @@ Vue.component(
         `
     });
 
-    var component1 = new Vue({
-        el: '#jsonFile3',
-        data: {
-            persons3: []
-        },
-        compute: {
-            odd() {
-                if (this.person.codigo % 2 === 0)
-                    return true;
-                else
-                    return false;
-            }
-        },
-        methods: {
-            loadJSON(callback) {
-    
-                var xobj = new XMLHttpRequest();
-                xobj.overrideMimeType("application/json");
-                xobj.open('GET', './files/team.json', true)
-                xobj.onreadystatechange = function () {
-                    if (xobj.readyState == 4 && xobj.status == "200") {
-                        // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-                        callback(xobj.responseText);
-                    }
-                };
-                xobj.send(null);
-            },
-            init() {
-                let that = this
-                that.loadJSON(function (response) {
-                    // Parse JSON string into object
-                    var data = JSON.parse(response);
-                    that.persons3 = data.team
-                });
-            }
-        },
-        mounted() {
-            this.init()
+var component1 = new Vue({
+    el: '#jsonFile3',
+    data: {
+        persons3: []
+    },
+    compute: {
+        odd() {
+            if (this.person.codigo % 2 === 0)
+                return true;
+            else
+                return false;
         }
-    });
+    },
+    methods: {
+        loadJSON(callback) {
 
-    Vue.component(
-        'noticia',
-        {        
-            props:{noticia:Object},
-            template:
+            var xobj = new XMLHttpRequest();
+            xobj.overrideMimeType("application/json");
+            xobj.open('GET', './files/team.json', true)
+            xobj.onreadystatechange = function () {
+                if (xobj.readyState == 4 && xobj.status == "200") {
+                    // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+                    callback(xobj.responseText);
+                }
+            };
+            xobj.send(null);
+        },
+        init() {
+            let that = this
+            that.loadJSON(function (response) {
+                // Parse JSON string into object
+                var data = JSON.parse(response);
+                that.persons3 = data.team
+            });
+        }
+    },
+    mounted() {
+        this.init()
+    }
+});
+
+Vue.component(
+    'noticia',
+    {
+        props: { noticia: Object },
+        
+        template:
             `         
                 <div class="col-lg-6 col-xs-12 border">
                             <div class="d-flex justify-content-center align-items-center">
-                                <div class="p-3"><i class="fab fa-linux" style="font-size:150px"></i> </div>
+                                <div class="p-3"><img :src=noticia.urlToImage style="width:200px; height:200px;"> </div>
                                 <div class="p-2">
-                                    <h5 class="news-title">Más allá de la broma, 2020 está siendo un buen año para Linux
-                                        en
-                                        el escritorio y más allá</h5>
-                                    <p> Lo de que este va a ser el año de
-                                        Linux en el escritorio se ha convertido ya en broma recurrente al hablar de este
-                                        sistema operativo, pero la verdad es que si ha habido un año excepcional para
-                                        Linux
-                                        en el escritorio, ese ha sido 2020, y la culpa, tóquense ustedes las narices, es
-                                        de
-                                        Microsoft. </p>
+                                    <h5 class="news-title">{{noticia.title}}</h5>
+                                    <p> {{noticia.description}} </p>
                                 </div>
                             </div>
-                            <div class="d-flex container-fluid justify-content-end pb-2 mt-n2"> <button type="button"
-                                    class="btn btn-outline-info"
-                                    onclick="window.open(location.href='https://www.linux.org/','_blank');">Leer noticia
-                                    completa >></button>
+                            <div class="d-flex container-fluid justify-content-end pb-2 mt-n2"> 
+                            <a :href=noticia.url class="btn btn-outline-info" role="button" aria-pressed="true" target="_blank">Primary link</a>                           
                             </div>
                         </div>
                         `
-                    });
+    });
 
-                    var component = new Vue({
-                        el: '#equipo-div'
-                    });
-                   
-                    Vue.component(
-                        'servicio',
-                        {        
-                            props:{servicio:Object},
-                            template:
-`
+var component = new Vue({
+    el: '#noticia-div',
+    data: {
+        noticias: ""
+    },
+    methods: {
+        testAPI(){
+            let urlText = "http://newsapi.org/v2/top-headlines?country=co&pageSize=4";
+            fetch(urlText, {
+                "method": "GET",
+                // 'mode':'cors',
+                "headers": {
+                    /* 'content-type': 'application/json; charset=utf-8',
+                    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+                    'Access-Control-Allow-Headers': 'X-Requested-With, content-type, accept,',
+                    'Access-Control-Allow-Credentials': 'true',
+                    'Access-Control-Allow-Origin': '*',
+                    'cache-control': 'no-cache', */
+                    'X-Api-Key': '19d0d5b29b0941c590ab12644225a277'
+                }
+            })
+                .then(response => {
+                    if (response.ok) {
+                        //let json = response.json();
+                        //console.log('json: ' + JSON.stringify(json,null,2));
+                        return response.json();
+                        //return json;
+                    } else {
+                        alert("Server returned " + response.status + " : " + response.statusText);
+                    }
+                }) 
+                .then(json => {
+                    this.noticias = json;                    
+                }) 
+                .catch(err => {
+                    console.log('err: ' + err);
+                }); 
+        }
+    },
+    mounted(){
+        this.testAPI()
+    }
+});
+
+Vue.component(
+    'servicio',
+    {
+        props: { servicio: Object },
+        template:
+            `
                     <div class="col-sm-6 col-xs-12 col-lg-4">
                             <div class="card">
                                 <div class="d-flex justify-content-center">
@@ -403,37 +434,40 @@ Vue.component(
                             </div>
                         </div>
                         `
-                    });
+    });
 
-                    var component = new Vue({
-                        el: '#servicio-div',
-                        data: {
-                            servicios: []
-                        },
-                        methods: {
-                            loadJSON(callback) {
-                    
-                                var xobj = new XMLHttpRequest();
-                                xobj.overrideMimeType("application/json");
-                                xobj.open('GET', './files/servicios.json', true)
-                                xobj.onreadystatechange = function () {
-                                    if (xobj.readyState == 4 && xobj.status == "200") {
-                                        // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-                                        callback(xobj.responseText);
-                                    }
-                                };
-                                xobj.send(null);
-                            },
-                            init() {
-                                let that = this
-                                that.loadJSON(function (response) {
-                                    // Parse JSON string into object
-                                    var data = JSON.parse(response);
-                                    that.servicios = data.servicios
-                                });
-                            }
-                        },
-                        mounted() {
-                            this.init()
-                        }
-                    });
+var component = new Vue({
+    el: '#servicio-div',
+    data: {
+        servicios: []
+    },
+    methods: {
+        loadJSON(callback) {
+
+            var xobj = new XMLHttpRequest();
+            xobj.overrideMimeType("application/json");
+            xobj.open('GET', './files/servicios.json', true)
+            xobj.onreadystatechange = function () {
+                if (xobj.readyState == 4 && xobj.status == "200") {
+                    // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+                    callback(xobj.responseText);
+                }
+            };
+            xobj.send(null);
+        },
+        init() {
+            let that = this
+            that.loadJSON(function (response) {
+                // Parse JSON string into object
+                var data = JSON.parse(response);
+                that.servicios = data.servicios
+            });
+        }
+    },
+    mounted() {
+        this.init()
+    }
+});
+
+
+                    //19d0d5b29b0941c590ab12644225a277
