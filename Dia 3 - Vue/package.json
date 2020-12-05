@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "vue": "^2.6.12"
+    "cors-anywhere": "^0.4.3",
+    "newsapi": "^2.4.1",
+    "vue": "^2.6.12",
+    "axios":"0.21.0"
   }
 }

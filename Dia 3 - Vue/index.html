@@ -95,12 +95,12 @@
                     <p class="section-text">Noticias</p>
                 </div>
                 <div class="container-fluid">
-                    <div id="equipo-div" class="row mt-md-5 mt-sm-5 mt-xs-5">
-                        <noticia></noticia>
-                        <noticia></noticia>
+                    <div id="noticia-div" class="row mt-md-5 mt-sm-5 mt-xs-5">
+                        <noticia v-for="noticia in noticias.articles" :noticia="noticia"></noticia>
+                        <!-- <noticia></noticia>
                         <div class="w-100"></div>
                         <noticia></noticia>
-                        <noticia></noticia>
+                        <noticia></noticia> -->
                     </div>
                 </div>
             </section>

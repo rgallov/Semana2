@@ -1,0 +1,25 @@
+{
+    "servicios": [
+        {
+            "Codigo": "1",
+            "Titulo": "<i class=\"fab fa-html5\"></i> HTML 5",
+            "Descripcion": "Última versión de HTML. Se trata de una nueva versión de HTML, con nuevos elementos, atributos y comportamientos. Contiene un conjunto más amplio de tecnologías que permite a los sitios Web y a las aplicaciones ser más diversas y de gran alcance",
+            "Imagen":"images/html5.png",
+            "Enlace":"https://www.w3.org/standards/webdesign/htmlcss.html"
+        },
+        {
+            "Codigo": "2",
+            "Titulo": "<i class=\"fab fa-node\"></i>Node JS",
+            "Descripcion": "Es un entorno en tiempo de ejecución multiplataforma, de código abierto, para la capa del servidor (pero no limitándose a ello) basado en el lenguaje de programación JavaScript, con E/S de datos en una arquitectura orientada a eventos.",
+            "Imagen":"images/nodejs.png",
+            "Enlace":"https://nodejs.org/es/"
+        },
+        {
+            "Codigo": "3",
+            "Titulo": "<i class=\"fab fa-python\"></i> Python",
+            "Descripcion": "Es un lenguaje de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código. Se trata de un lenguaje de programación multiparadigma, ya que soporta orientación a objetos, programación imperativa y, en menor medida, programación funcional.",
+            "Imagen":"images/python.png",
+            "Enlace":"https://www.python.org/"
+        }
+    ]
+}
